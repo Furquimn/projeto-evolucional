@@ -1,0 +1,25 @@
+﻿@page
+@model ProjetoEvolucional.Pages.IndexModel
+@{
+    Layout = null;
+    <link rel="stylesheet" href="~/css/Index.css" />
+}
+
+
+<div class="loginContainer">
+    <form method="post">
+        <h2>Login</h2>
+        <label>Usuário:</label>
+        <input type="text" name="Login" />
+
+        <label>Senha:</label>
+        <input type="password" name="Senha" />
+
+        <button type="submit">Entrar</button>
+
+        @if (TempData["ErroLogin"] != null)
+        {
+            <p style="color:red; background-color: white; border-radius: 3px; padding: 10px;">@TempData["ErroLogin"]</p>
+        }
+    </form>
+</div>

@@ -1,0 +1,36 @@
+﻿@page
+@model ProjetoEvolucional.Pages.ExecutarModel
+@{
+    var mensagem = TempData["Mensagem"] as string;
+    var excelGerado = TempData["ExcelGerado"]?.ToString() == "True";
+}
+
+
+<link rel="stylesheet" href="~/css/Executar.css" />
+
+<div class="containerExecutar">
+    <h1>Escolha sua Ação</h1>
+    <form method="post">
+        <button type="submit" asp-page-handler="GerarAlunos" class="Alunos">Gerar Alunos</button>
+        <button type="submit" asp-page-handler="GerarExcel" class="Excel">Gerar Excel</button>
+    </form>
+
+    <form method="post">
+        <button type="submit" asp-page-handler="Logout" class="Sair">Sair</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(mensagem))
+    {
+        <p>@mensagem</p>
+    }
+
+    @if (excelGerado)
+    {
+        <form method="get" asp-page-handler="DownloadExcel">
+             <a class="botao-download" href="?handler=DownloadExcel">Baixar Excel</a>
+        </form>
+    }
+
+
+
+</div>
