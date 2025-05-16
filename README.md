@@ -9,7 +9,6 @@ Sistema de geração de alunos, atribuição de notas e exportação de relatór
 - ASP.NET Core Razor Pages (.NET 9)
 - SQL Server (local)
 - ClosedXML (para geração de planilhas Excel)
-- Bootstrap (estilização)
 - Sessões (autenticação)
 
 ---
